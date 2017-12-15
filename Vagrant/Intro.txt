@@ -1,0 +1,96 @@
+# Vagrant is a CLI tool for building and managing virtual machine environments in a single workflow. 
+
+# To get list of general help commands
+- $ vagrant help
+
+# Initializing a directory with vagrant box
+- $ vagrant init hashicorp/precise64
+
+# Vagrantfile is a ruby based configuration file for vagrant
+
+# Bringing up the specified box 
+- $ vagrant up
+
+# SSHing into the constructed box
+- $ <username> ssh
+
+# Checking the status of VMs
+- $ vagrant status
+
+# Suspending VMs
+- $ vagrant suspend
+
+# To resume suspended VM
+- $ vagrant up
+
+# To turn off a VM
+- $ vagrant halt
+
+# To delete the VM
+- $ vagrant destroy
+
+# Make the project folder a git repo
+- $ git init
+
+# Add the .vagrant file into .gitignore file
+
+# Checking git log
+- $ git log (options - <oneline>)
+
+# checking help on vagrant boxes
+- $ vagrant help box
+
+# Adding a new vagrant box 
+- $ vagrant box add ubuntu/trusty64
+
+# Removing a box
+- $ vagrant box remove <box name>
+
+# Installing a vagrant plugin
+- $ vagrant plugin install <plugin name>
+EXAMPLE: installing vagrant-vbguest for keeping virtual box guest additions up to date
+- $ vagrant plugin install vagrant-vbguest
+# Now when I do vagrant up, it will detect whether the virtual box guest addition is up to date and if the VBGA is not then vbguest plugin will update it.
+
+# Listing all the plugins
+- $ vagrant plugin list
+
+# updating plugins
+- $ vagrant plugin update (option <plugin name>) (otherwise all plugins are updated)
+
+# removing plugins
+- $ vagrant plugin uninstall <plugin name>
+
+# Building a LAMP (linux, Apache, Mysql, php) stack provisioning
+#Setting up vagrant
+- $ vagrant init grtjn/centos-6.5 (for chef centos 6.5 basebox)
+#make changes in vagrantfile by uncommenting configure.vm.network "forwarded_port", guest: 80, host: 8080 line
+- $ vagrant up
+#go into the VM
+- $ sudo yum update -y
+- $ sudo yum install -y httpd httpd-devel httpd-tools
+- $ sudo chkconfig --add httpd
+- $ sudo chkconfig httpd on
+- $ sudo service httpd stop
+- $ sudo rm -rf /var/www/html
+- $ sudo ln -s /vagrant /var/www/html
+- $ sudo service httpd start
+# exit the VM
+# create a simple index.html file
+# check on localhost:8080 in browser
+# Enter into VM
+- $ sudo yum install -y php php-cli php-common php-devel php-mysql
+- $ sudo service httpd restart 
+- $ sudo yum install -y mysql mysql-server mysql-devel
+- $ sudo chkconfig --add mysqld
+- $ sudo chkconfig mysqld on
+- $ sudo service mysqld start
+- $ mysql -u root -e "CREATE DATABASE IF NOT EXISTS dev_test";
+- $ mysql -u root -e "SHOW DATABASES";
+
+# to keep this modified VM permanent and to be able to share this box with someone - 
+- $ vagrant package --output centos-lamp.box
+# adding this box file to vagrant
+- $ vagrant box add centos-lamp centos-lamp.box
+# now I can create a new VM using this box and it'll have the lamp stack installed. 
+# the vagrant file needs to be configured as before by uncommenting port forwarding   # line

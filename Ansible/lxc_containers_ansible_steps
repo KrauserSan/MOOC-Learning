@@ -1,0 +1,25 @@
+#installing lxc
+sudo apt install lxc
+
+#listing containers
+lxc-ls --fancy
+
+#creating containers
+lxc-create -t <type> -n <name>
+
+#starting containers
+lxc-start -n <name> -d (detach)
+
+#attaching to a container
+lxc-attach -n <name>
+
+#installing python in the containers to run ansible after attaching to them
+apt-get install python-minimal --no-install-recommends
+
+#ansible.cfg file can be in the working directory, or /etc/ansible/ or user directory
+
+#by default ansible will look for /etc/ansible/hosts file. In order to use custom inventory file use -i option with ansible-playbook
+
+---------------------------------------------------------------------------------------
+#running ansible playbook
+ansible-playbook <playbookname>.yml -i <inventory file> -u ubuntu -k --ask-sudo-pass

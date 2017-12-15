@@ -1,0 +1,29 @@
+<html>
+<body>
+  <h2>try catch and throw</h2>
+  <p> Please input a number between 5 and 10:</p>
+  <input id="in" type="text">
+  <button onclick="myFunction()">Test Input</button>
+  <p id="id"></p>
+  <script>
+  function myFunction(){
+    var x = document.getElementById('in').value;
+    console.log('hello');
+    try {
+      if (x =="") {
+        throw "input is empty";
+      }
+      if (x <5) {
+        throw "input too low";
+      }
+      if (x >10) {
+        throw "input too large";
+      }
+
+    } catch (e) {
+      document.getElementById('id').innerHTML=e;
+    }
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<body>
+  <p>Creating and using an object method </p>
+  <p> An object method is a function definition stored as a property value</p>
+
+  <p id="id"></p>
+
+  <script>
+  var person = {firstName:"John",
+  lastName:"Doe",
+  id:5566,
+  fullname:function(){
+    return this.firstName + " " + this.lastName;
+  }
+};
+  document.getElementById('id').innerHTML=person.fullname();
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<body>
+  <h2>JavaScript String Methods</h2>
+
+  <p>the slice() method extracts a part of a string and returns the extracted parts in a new string</p>
+  <p id="id1"></p>
+  <p id="id3"></p>
+  <p id="id2"></p>
+  <p id="id4"></p>
+  <p>The substring method is same as slice but it doesn't accept negative arguments</p>
+  <p id="id5"></p>
+  <p>The substr() method is same as slice but the second argument specifies the length of the extracted part</p>
+  <p id="id6"></p>
+  <p>Other methods: str.replace(), str.toUpperCase(), str.toLowerCase(), str.concat(), str.split()</p>
+  <script>
+  var str = 'Apple, Banana, Kiwi';
+  document.getElementById('id1').innerHTML=str.slice(7,13);
+  document.getElementById('id2').innerHTML=str.slice(7);
+  document.getElementById('id3').innerHTML=str.slice(-12,-6);
+  document.getElementById('id4').innerHTML=str.slice(-12);
+  document.getElementById('id5').innerHTML=str.substring(7,13);
+  document.getElementById('id6').innerHTML=str.substr(7,6);
+  </script>
+</body>
+</html>

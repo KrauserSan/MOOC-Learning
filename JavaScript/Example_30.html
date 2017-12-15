@@ -1,0 +1,23 @@
+<html>
+<body>
+  <h2>pop()</h2>
+  <p>the pop() method removes the last element from an array</p>
+  <p id="id1"></p>
+  <p id="id2"></p>
+  <p id="id3"></p>
+  <p id="id4"></p>
+  <p>shift() method removes the first array element</p>
+  <p id="id5"></p>
+  <p>unshift() method adds a new element to an array at the beginning of the arary and returns the new array lenght</p>
+  <p id="id6"></p>
+  <script>
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById('id1').innerHTML=fruits.pop();
+  document.getElementById('id2').innerHTML=fruits;
+  document.getElementById('id3').innerHTML=fruits.push('yellow');
+  document.getElementById('id4').innerHTML=fruits;
+  document.getElementById('id5').innerHTML=fruits.shift();
+  document.getElementById('id6').innerHTML=fruits.unshift('yello');
+  </script>
+</body>
+</html>

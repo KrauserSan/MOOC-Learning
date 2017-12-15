@@ -1,0 +1,14 @@
+<html>
+<body>
+  <p>the local variable carName cannot be accessed from code outside the funciton</p>
+  <p id="id"></p>
+
+  <script>
+  myfunction();
+  document.getElementById('id').innerHTML="The type of carName is "+typeof carName;
+  function myfunction(){
+    var carName = "volvo";
+  }
+  </script>
+</body>
+</html>

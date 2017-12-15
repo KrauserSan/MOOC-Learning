@@ -1,0 +1,27 @@
+---
+
+- hosts:  all
+  remote_user: ubuntu
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  vars:
+    #used for filepaths
+    site_name:  "tutoriallinux"
+    #used in the website's markup
+    site_title: "hope"
+    #used in the web server configuration file
+    site_url: "www.tutorialinux.com"
+
+  tasks:
+    - name: Install nginx
+      package:  name=nginx state=latest
+    - name: create website directory
+      file: path="/var/www{{ site_name }}" state=directory mode=0755
+
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state:  restarted

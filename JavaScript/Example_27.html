@@ -1,0 +1,15 @@
+<html>
+<body>
+  <p>The toString() method can output numbers as base 16(hex), base 8(octal), base 2(binary)</p>
+  <p id="id"></p>
+  <button onclick="myfunction()">click</button>
+  <script>
+  function myfunction(){
+    var num = 128;
+    document.getElementById('id').innerHTML='128= ' + num + ' decimal, ' + num.toString(16) + ' hexa, ' + num.toString(8) + ' octal, ' +
+    num.toString(2) + ' binary';
+  }
+  </script>
+
+</body>
+</html>

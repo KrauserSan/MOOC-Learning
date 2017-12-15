@@ -1,0 +1,23 @@
+<html>
+<body>
+  <p> the sort() method sorts an array alphabetically.</p>
+
+  <button onclick="myfunction()">Click Me</button>
+  <p id="id"></p> <br>
+  <p> the reverse() method reverses the elements in an array</p>
+  <p>sort() method sorts strings. in order to sort numbers, compare function is used.</p>
+  <p id="id2"></p>
+  <script>
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var num1 = [40,100,1,5,25,10];
+  document.getElementById('id2').innerHTML=num1;
+  document.getElementById('id').innerHTML=fruits;
+  function myfunction(){
+    fruits.sort();
+    document.getElementById('id').innerHTML=fruits;
+    num1.sort(function(a,b){return a-b});
+    document.getElementById('id2').innerHTML=num1;
+  }
+  </script>
+</body>
+</html>

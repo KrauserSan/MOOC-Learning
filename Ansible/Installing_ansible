@@ -1,0 +1,9 @@
+#installing the latest version of ansible
+git clone https://www.github.com/ansible/ansible
+git submodule update --init --recursive
+
+#installing dependencies
+apt get install python-jinja2 python-paramiko python-yaml sshpass
+
+#sourcing
+source ./hacking/env-setup

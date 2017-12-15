@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Using createElement method</title>
+  </head>
+  <body>
+    <div class="dogs-list"></div>
+    <script>
+    const dogList= document.querySelector('.dogs-list');
+    const dogs = [{name : "bruce", type : "chihuahua"},
+    {name : 'chance', type:'bernese'}
+    ];
+    for (let i = 0;i<dogs.length;i++){
+      const dog = dogs[i];
+      const dogData =document.createElement('div');
+      dogData.innerText = dog.name;
+      dogList.appendChild(dogData);
+    }
+    </script>
+
+  </body>
+</html>

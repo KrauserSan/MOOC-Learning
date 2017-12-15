@@ -1,0 +1,15 @@
+<html>
+<body>
+  <h2>soring array in random order</h2>
+  <button onclick="myfunction()">Click me</button>
+  <p id="id"></p>
+  <script>
+  var num1 = [40,100,1,5,25,10];
+  document.getElementById('id').innerHTML=num1;
+  function myfunction(){
+    num1.sort(function(a,b){return 0.5 - Math.random()});
+    document.getElementById('id').innerHTML=num1;
+  };
+  </script>
+</body>
+</html>
