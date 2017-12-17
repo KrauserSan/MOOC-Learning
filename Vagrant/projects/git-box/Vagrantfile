@@ -9,9 +9,9 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-  config.vm.provision "file",
-    source: "c:\\Users\\vivpa\\Downloads\\MOOC-Learning\\Vagrant\\projects\\files\\git-config",
-    destination: "~/.gitconfig"
+
+  config.vm.provision "shell",
+    path: "c:\\Users\\vivpa\\Downloads\\MOOC-Learning\\Vagrant\\scripts\\provision.sh"
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "grtjn/centos-6.5"

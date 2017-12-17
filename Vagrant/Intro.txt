@@ -94,3 +94,4 @@ EXAMPLE: installing vagrant-vbguest for keeping virtual box guest additions up t
 - $ vagrant box add centos-lamp centos-lamp.box
 # now I can create a new VM using this box and it'll have the lamp stack installed. 
 # the vagrant file needs to be configured as before by uncommenting port forwarding   # line
+
