@@ -26,5 +26,12 @@ service mysqld start
 
 mysql -u root -e "SHOW DATABASES";
 
+# Download stater content
+cd /vagrant
+sudo -u vagrant wget -q https://raw.githubusercontent.com/KrauserSan/MOOC-Learning/master/Vagrant/files/index.html
+sudo -u vagrant wget -q https://raw.githubusercontent.com/KrauserSan/MOOC-Learning/master/Vagrant/files/info.php
+
+
+
 service httpd restart
 
