@@ -95,3 +95,23 @@ EXAMPLE: installing vagrant-vbguest for keeping virtual box guest additions up t
 # now I can create a new VM using this box and it'll have the lamp stack installed. 
 # the vagrant file needs to be configured as before by uncommenting port forwarding   # line
 
+# provisioning in the vagrant file
+# open the vagrantfile and enter the following to send a file to the VM
+  config.vm.provision "file",
+    source: "c:\\Users\\vivpa\\Downloads\\MOOC-Learning\\Vagrant\\projects\\files\\git-config",
+    destination: "~/.gitconfig"
+# This will copy the file named git-config toe the VM at the specified destination
+
+# Similary to provision shell commands for the created VM, open vagrantfile and enter:
+  config.vm.provision "shell",
+    inline: "yum install -y git"
+# the do vagrant up
+
+# So, for provisioning we can either write inline scrips or write external scripts   # and share them among multiple vagrant projects
+# write a script and in the vagrantfile of the project enter the following lines
+  config.vm.provision "shell",
+    path: "c:\\Users\\vivpa\\Downloads\\MOOC-Learning\\Vagrant\\scripts\\provision.sh"
+
+# Building LAMP Stack with shell provisioning 
+# in order to share the scripts in multiple projects, we can either add the          # index.html file and info.php file in the /vagrant folder for every project or give # a github link in the script file and maintain a single copy of the index and info  # files. 
+
